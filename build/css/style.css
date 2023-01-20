@@ -5,7 +5,7 @@
   --color-green: #3A9F64;
   --color-hover: rgb(29 33 30 / 0.6);
   --color-grey: #AEB5B2;
-  --br-sm-2: 14px;
+  --color-btn: #000000;
   --box-shadow-1: 0 3px 15px rgba(0, 0, 0, .3);
   --color-backbround-2: rgb(211 220 215 / 7%);
 }
@@ -18,6 +18,7 @@
   --color-hover: #f8f8f8;
   --color-grey: #393a3a;
   --color-backbround-2: rgb(58 159 100 / 5%);
+  --color-btn: #ffffff;
 }
 
 * {
@@ -1143,6 +1144,248 @@ body ::-webkit-scrollbar-thumb {
   background: var(--color-backbround-2);
 }
 
+.calculator__top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-bottom: 30px;
+}
+
+.calculator__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 36px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 800;
+  line-height: 44px;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.calculator__choose {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+}
+
+.calculator__choose-text {
+  color: var(--color-grey);
+  display: grid;
+  font-size: 11px;
+  max-width: 125px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 500;
+  line-height: 13px;
+  margin-right: 8px;
+}
+
+.calculator__choose-double {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 56px;
+  height: 56px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.calculator__choose-double rect {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.calculator__choose-double.active rect {
+  stroke: var(--color-green);
+}
+
+.calculator__choose-triple {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 56px;
+  height: 56px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  background-color: var(--color-secondary);
+  -webkit-box-shadow: 0px 10px 21px rgba(17, 58, 34, 0.1);
+          box-shadow: 0px 10px 21px rgba(17, 58, 34, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.calculator__choose-triple rect {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.calculator__choose-triple.active rect {
+  stroke: var(--color-green);
+}
+
+.feedbacks {
+  padding: 110px 0 40px;
+}
+
+.feedbacks__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 35px;
+  font-size: 36px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 800;
+  line-height: 44px;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.feedbacks__clients {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.feedbacks__client {
+  position: relative;
+  min-height: 210px;
+  padding: 30px 30px 40px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  -webkit-box-shadow: 0px 18px 21px -12px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 18px 21px -12px rgba(0, 0, 0, 0.16);
+  border-radius: 14px;
+  color: var(--color-text);
+  -webkit-transition: -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: var(--color-secondary);
+}
+
+.feedbacks__client-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.feedbacks__client-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.feedbacks__client-link {
+  color: var(--color-green);
+  font-size: 12px;
+  text-align: right;
+  font-weight: 800;
+  line-height: 130%;
+  letter-spacing: 0.02em;
+}
+
+.feedbacks__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.feedbacks__footer-title {
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+}
+
+.feedbacks__footer-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 44px;
+  min-width: 150px;
+  padding: 6px 16px;
+  color: var(--color-btn);
+  font-size: 10px;
+  font-weight: 800;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  line-height: 16px;
+  border-radius: 12px;
+  letter-spacing: 0.01em;
+  background-color: var(--color-green);
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  text-transform: uppercase;
+}
+
 @media (max-width: 1449.98px) {
   .about {
     padding: 0;
@@ -1611,6 +1854,19 @@ body ::-webkit-scrollbar-thumb {
   .reviews__slider-prev {
     display: none;
   }
+
+  .calculator__title {
+    font-size: 28px;
+  }
+
+  .feedbacks__clients {
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .feedbacks__client {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -1758,6 +2014,16 @@ body ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: 1px 1px 8px 0px #3333333b;
             box-shadow: 1px 1px 8px 0px #3333333b;
   }
+
+  .calculator__top {
+    display: none;
+  }
+
+  .feedbacks__title {
+    margin-bottom: 0px;
+    font-size: 24px;
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 479.98px) {
@@ -1777,5 +2043,22 @@ body ::-webkit-scrollbar-thumb {
     -webkit-column-gap: 10px;
        -moz-column-gap: 10px;
             column-gap: 10px;
+  }
+
+  .feedbacks__clients {
+    gap: 0px;
+    margin: -10px;
+    overflow-x: scroll;
+    -ms-scroll-snap-type: x proximity;
+        scroll-snap-type: x proximity;
+    grid-template-columns: repeat(6, 323px);
+  }
+
+  .feedbacks__clients::-webkit-scrollbar {
+    display: none;
+  }
+
+  .feedbacks__client {
+    margin: 24px 12px;
   }
 }
