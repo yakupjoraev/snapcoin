@@ -1,0 +1,92 @@
+// Container
+.container {
+  max-width: ($containerWidth + $containerPadding) + px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $containerSidePadding + px;
+
+  @media (max-width: $breakpoint1450) {
+    // max-width: 1200px;
+  }
+
+  @media (max-width: $breakpoint992) {
+    // max-width: 970px;
+  }
+
+  @media (max-width: $breakpoint768) {
+    // max-width: 740px;
+  }
+
+  @media (max-width: $breakpoint480) {
+    // max-width: none;
+  }
+}
+
+html {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background: rgb(45 80 147/10%);
+    border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(107 118 140/20%);
+    border-radius: 20px;
+  }
+}
+
+// Body Locked
+body {
+  font-family: $fontMain;
+  background-color: var(--color-background);
+
+  &.locked {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      z-index: 10;
+      align-items: center;
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      -webkit-tap-highlight-color: transparent;
+      opacity: 1;
+      transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background: rgb(45 80 147/10%);
+    border-radius: 20px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(107 118 140/20%);
+    border-radius: 20px;
+  }
+}
+
+// Animations
+// Fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

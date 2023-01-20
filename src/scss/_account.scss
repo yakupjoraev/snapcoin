@@ -1,0 +1,158 @@
+.account {
+
+  // .account__inner
+
+  &__inner {}
+
+  // .account__title
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 32px;
+    }
+  }
+
+  // .account__orders
+
+  &__orders {}
+
+  // .account__nav
+
+  &__nav {
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  // .account__nav-arrow
+
+  &__nav-arrow {}
+
+  // .account__nav-arrow--prev
+
+  &__nav-arrow--prev {
+    margin-right: 24px;
+    color: var(--color-grey);
+    height: 32px;
+    margin: 0 3px;
+    padding: 0 6px;
+    font-size: 0.875rem;
+    min-width: 32px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 800;
+    line-height: 1.43;
+    border-radius: 16px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    & svg path {
+      fill: var(--color-grey);
+    }
+  }
+
+  // .account__nav-arrow--next
+
+  &__nav-arrow--next {
+    margin-left: 24px;
+    color: var(--color-grey);
+    height: 32px;
+    margin: 0 3px;
+    padding: 0 6px;
+    font-size: 0.875rem;
+    min-width: 32px;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 800;
+    line-height: 1.43;
+    border-radius: 16px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+    & svg path {
+      fill: var(--color-grey);
+    }
+  }
+}
+
+.orders {
+  margin: auto;
+  margin-bottom: 40px;
+  border-radius: 14px;
+  box-shadow: 0px 10px 50px -30px rgb(60 66 63 / 40%);
+  text-align: left;
+
+  @media (max-width: $breakpoint768) {
+    box-shadow: none;
+  }
+
+  // .orders__info
+
+  &__info {}
+
+  // .orders__top
+
+  &__top {}
+
+  // .orders__items
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    height: 54px;
+    width: 100%;
+    padding: 20px;
+    padding-right: 62px;
+    color: var(--color-text);
+    background: unset;
+
+    @media (max-width: $breakpoint768) {
+      display: none;
+    }
+  }
+
+  // .orders__item
+
+  &__item {
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  // .orders__list
+
+  &__list {
+    background: transparent;
+    overflow-y: auto;
+    text-align: center;
+    transition: filter 0.2s;
+    border-radius: 0px 0px 16px 16px;
+
+    @media (max-width: $breakpoint768) {
+      overflow: visible;
+    }
+  }
+
+  // .orders__order
+
+  &__order {
+    padding: 15px;
+    background: var(--color-backbround-2);
+
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 15px;
+      background: transparent;
+      box-shadow: 1px 1px 8px 0px #3333333b;
+    }
+  }
+}
