@@ -148,22 +148,184 @@ function tabs() {
 
 tabs()
 
+function sliderReviews() {
+  const container = document.querySelector('.about')
 
-let swiper = new Swiper(".reviews__slider-swiper", {
-  slidesPerView: 1,
-  loop: true,
-  navigation: {
-    nextEl: ".reviews__slider-next",
-    prevEl: ".reviews__slider-prev",
-  },
+  if (!container) {
+    return null
+  }
 
-  breakpoints: {
-
-    993: {
-      slidesPerView: 3,
-      spaceBetween: 40,
+  let swiper = new Swiper(".reviews__slider-swiper", {
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: ".reviews__slider-next",
+      prevEl: ".reviews__slider-prev",
     },
-  },
+
+    breakpoints: {
+
+      993: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+    },
+
+  });
+}
+
+sliderReviews();
+
+function filterSend() {
+  const list = document.querySelector('.js-send-filters'),
+    items = document.querySelectorAll('.js-send-list'),
+    listItems = document.querySelectorAll('.js-send-filter')
+
+  function filter() {
+    list.addEventListener('click', event => {
+      const targetId = event.target.dataset.id
+      const target = event.target
+
+      if (target.classList.contains('js-send-filter')) {
+        listItems.forEach(listItem => listItem.classList.remove('active'))
+        target.classList.add('active')
+      }
 
 
-});
+      switch (targetId) {
+        case 'send-all':
+          getItems('js-send-list')
+          break
+        case 'send-banks':
+          getItems(targetId)
+          break
+        case 'send-cryptocurrency':
+          getItems(targetId)
+          break
+        case 'send-ps':
+          getItems(targetId)
+          break
+      }
+    })
+  }
+  filter()
+
+  function getItems(className) {
+    items.forEach(item => {
+      if (item.classList.contains(className)) {
+        item.style.display = 'grid'
+      } else {
+        item.style.display = 'none'
+      }
+    })
+  }
+}
+
+filterSend();
+
+function filterReceive() {
+  const list = document.querySelector('.js-receive-filters'),
+    items = document.querySelectorAll('.js-receive-list'),
+    listItems = document.querySelectorAll('.js-receive-filter')
+
+  function filter() {
+    list.addEventListener('click', event => {
+      const targetId = event.target.dataset.id
+      const target = event.target
+
+      if (target.classList.contains('js-receive-filter')) {
+        listItems.forEach(listItem => listItem.classList.remove('active'))
+        target.classList.add('active')
+      }
+
+
+      switch (targetId) {
+        case 'receive-all':
+          getItems('js-receive-list')
+          break
+        case 'receive-banks':
+          getItems(targetId)
+          break
+        case 'receive-cryptocurrency':
+          getItems(targetId)
+          break
+        case 'receive-ps':
+          getItems(targetId)
+          break
+      }
+    })
+  }
+  filter()
+
+  function getItems(className) {
+    items.forEach(item => {
+      if (item.classList.contains(className)) {
+        item.style.display = 'grid'
+      } else {
+        item.style.display = 'none'
+      }
+    })
+  }
+}
+
+filterReceive();
+
+function sendSlection() {
+  const container = document.querySelector('.send-selection')
+  const containerList = document.querySelector('.send-selection ul')
+
+  if (!container) {
+    return null
+  }
+
+  container.addEventListener('click', () => {
+    containerList.classList.toggle('active')
+  })
+}
+
+sendSlection();
+
+function receiveSlection() {
+  const container = document.querySelector('.receive-selection')
+  const containerList = document.querySelector('.receive-selection ul')
+
+  if (!container) {
+    return null
+  }
+
+  container.addEventListener('click', () => {
+    containerList.classList.toggle('active')
+  })
+}
+
+receiveSlection();
+
+function sendSelect() {
+  const container = document.querySelector('.send-select')
+  const containerList = document.querySelector('.send-select ul')
+
+  if (!container) {
+    return null
+  }
+
+  container.addEventListener('click', () => {
+    containerList.classList.toggle('active')
+  })
+}
+
+sendSelect();
+
+function receiveSelect() {
+  const container = document.querySelector('.receive-select')
+  const containerList = document.querySelector('.receive-select ul')
+
+  if (!container) {
+    return null
+  }
+
+  container.addEventListener('click', () => {
+    containerList.classList.toggle('active')
+  })
+}
+
+receiveSelect()
