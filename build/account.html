@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="./css/style.min.css">
 </head>
 
@@ -364,6 +365,77 @@
     </div>
   </div>
 </section>
+    <div class="login-modal" id="login-modal">
+  <form class="login-modal__form" action="#">
+    <h4 class="login-modal__title">
+      Log in
+    </h4>
+
+    <div class="login-modal__log">
+      <div class="login-modal__group">
+        <label class="login-modal__label" for="email-input">Е-mail</label>
+        <input class="login-modal__input" type="email" name="email" id="email-input" placeholder="Enter e-mail">
+      </div>
+
+      <div class="login-modal__group">
+        <label class="login-modal__label" for="password-input">Password</label>
+        <input class="login-modal__input" type="password" name="password" id="password-input"
+          placeholder="Enter password">
+      </div>
+
+      <a class="login-modal__forgot" href="#">Forgot password?</a>
+    </div>
+
+    <button type="submit" class="login-modal__btn">Log in</button>
+
+    <p class="login-modal__or">
+      Or log in with social networks
+    </p>
+
+    <div class="login-modal__brousers">
+      <div class="login-modal__brouser">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Yandex_Logo" x="0px" y="0px" viewBox="0 0 1080 1080">
+          <circle cx="540" cy="540" r="538.9" fill="#FFFFFF"></circle>
+          <path id="Glyph" fill="#FC3F1D"
+            d="M735,878.3H616.7V293.2H564c-96.6,0-147.2,48.3-147.2,120.4c0,81.8,34.9,119.7,107.1,168l59.5,40.1  l-171,256.5H285.2l153.9-229c-88.5-63.2-138.3-124.9-138.3-229c0-130.1,90.7-218.6,262.4-218.6h171v676.5H735z">
+          </path>
+        </svg>
+      </div>
+
+      <div class="login-modal__brouser">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.2188 15.9999C11.2188 15.108 11.4645 14.2726 11.8914 13.5573V10.5229H8.85709C7.65279 12.087 7 13.9932 7 15.9999C7 18.0065 7.65279 19.9127 8.85709 21.4768H11.8914V18.4425C11.4645 17.7271 11.2188 16.8917 11.2188 15.9999Z"
+            fill="#FBBD00"></path>
+          <path
+            d="M16 20.7814L13.8906 22.8908L16 25.0002C18.0068 25.0002 19.9129 24.3474 21.477 23.1431V20.1121H18.4459C17.7243 20.5405 16.8853 20.7814 16 20.7814Z"
+            fill="#0F9D58"></path>
+          <path
+            d="M11.8917 18.4424L8.85742 21.4767C9.09586 21.7864 9.35549 22.0829 9.63643 22.3639C11.3363 24.0638 13.5965 24.9999 16.0005 24.9999V20.7811C14.2559 20.7811 12.7268 19.8417 11.8917 18.4424Z"
+            fill="#31AA52"></path>
+          <path
+            d="M25.0002 15.9999C25.0002 15.4523 24.9506 14.9037 24.8528 14.3694L24.7736 13.937H16V18.1558H20.2699C19.8552 18.9807 19.2177 19.6536 18.4458 20.1119L21.4769 23.143C21.7865 22.9045 22.0831 22.6449 22.3641 22.364C24.064 20.664 25.0002 18.4039 25.0002 15.9999Z"
+            fill="#3C79E6"></path>
+          <path
+            d="M19.381 12.619L19.7538 12.9919L22.737 10.0087L22.3641 9.63585C20.6642 7.93595 18.4041 6.99976 16 6.99976L13.8906 9.10917L16 11.2186C17.2771 11.2186 18.4779 11.7159 19.381 12.619Z"
+            fill="#CF2D48"></path>
+          <path
+            d="M16.0005 11.2186V6.99976C13.5965 6.99976 11.3364 7.93595 9.63643 9.63582C9.35549 9.91676 9.09586 10.2133 8.85742 10.523L11.8917 13.5573C12.7268 12.158 14.2559 11.2186 16.0005 11.2186Z"
+            fill="#EB4132"></path>
+        </svg>
+      </div>
+    </div>
+
+    <div class="login-modal__sign">
+      No account yet?
+      <a data-fancybox class="login-modal__sign-link" href="#create-login">Sign up</a>
+    </div>
+  </form>
+</div>
+
+<div class="create-login" id="create-login">
+
+</div>
   </main>
 
   <!-- Footer -->
@@ -547,6 +619,8 @@
 
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script src="./js/scripts.min.js"></script>
 
 </html>

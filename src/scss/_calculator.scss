@@ -131,6 +131,7 @@
 
     @media (max-width: $breakpoint768) {
       grid-template-columns: 1fr;
+      justify-items: center;
     }
   }
 
