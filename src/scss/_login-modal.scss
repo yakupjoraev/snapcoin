@@ -189,3 +189,220 @@
     color: var(--color-green);
   }
 }
+
+.create-login {
+  max-width: 600px;
+  padding: 40px;
+  position: relative;
+  overflow-y: auto;
+  border-radius: 20px;
+  color: var(--color-text);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: var(--color-secondary);
+  box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgb(0 0 0 / 12%);
+
+
+  // .create-login__form
+
+  &__form {
+    display: grid;
+    max-width: 320px;
+    min-width: 300px;
+    text-align: center;
+    grid-row-gap: 7px;
+  }
+
+  // .create-login__title
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 29px;
+    letter-spacing: 0.02em;
+  }
+
+  // .create-login__main
+
+  &__main {
+    display: grid;
+    grid-row-gap: 28px;
+    grid-template-columns: minmax(0px, 1fr);
+  }
+
+  // .create-login__group
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  // .create-login__label
+
+  &__label {
+    font-size: 14px;
+    text-align: left;
+    color: var(--color-grey);
+  }
+
+  // .create-login__input
+
+  &__input {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    height: 51px;
+    padding: 0 24px;
+    opacity: 1;
+    overflow: hidden;
+    background: rgb(134 149 143 / 0.1);
+    box-shadow: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.1876em;
+    color: var(--color-text);
+    cursor: text;
+
+    &::placeholder {
+      font-family: $fontMain;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.1876em;
+      color: var(--color-text);
+    }
+
+    &.error {
+      border: 1px solid red;
+    }
+  }
+
+  // .create-login__checkbox
+
+  &__checkbox {
+    position: relative;
+  }
+
+  // .create-login__checkbox-input
+
+  &__checkbox-input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    z-index: -10;
+
+    &:checked~.create-login__btn {
+      user-select: auto;
+      pointer-events: auto;
+      background-color: var(--color-green);
+    }
+
+    &:checked~.create-login__checkbox-check {
+      background-color: var(--color-green);
+    }
+
+  }
+
+  // .create-login__checkbox-check
+
+  &__checkbox-check {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid var(--color-text);
+  }
+
+  // .create-login__checkbox-descr
+
+  &__checkbox-descr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+  }
+
+  // .create-login__checkbox-link
+
+  &__checkbox-link {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    color: var(--color-green);
+  }
+
+  // .create-login__btn
+
+  &__btn {
+    user-select: none;
+    pointer-events: none;
+    width: 100%;
+    height: 52px;
+    font-size: 12px;
+    min-width: 150px;
+    padding: 6px 16px;
+    margin-bottom: 20px;
+    box-shadow: none;
+    min-height: 44px;
+    font-weight: 600;
+    line-height: 16px;
+    border-radius: 12px;
+    background-color: var(--color-background);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: var(--color-text);
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:focus {
+      opacity: 0.9;
+    }
+  }
+
+  // .create-login__log
+
+  &__log {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 3px;
+    color: var(--color-grey);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+  }
+
+  // .create-login__log-link
+
+  &__log-link {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    color: var(--color-green);
+  }
+}
+
+.fancybox-can-pan .fancybox-content,
+.fancybox-can-swipe .fancybox-content {
+  cursor: default;
+}

@@ -67,5 +67,46 @@
 </div>
 
 <div class="create-login" id="create-login">
+  <form class="create-login__form" action="#">
+    <h3 class="create-login__title">
+      Create an account
+    </h3>
 
+    <div class="create-login__main">
+      <div class="create-login__group">
+        <label class="create-login__label" for="create-login-email">Enter e-mail</label>
+        <input class="create-login__input" name="create-login-email" id="create-login-email" type="text"
+          placeholder="Enter e-mail">
+      </div>
+
+      <div class="create-login__group">
+        <label class="create-login__label" for="create-login-password">Password</label>
+        <input class="create-login__input" name="create-login-password" id="create-login-password" type="password"
+          placeholder="Enter password">
+      </div>
+
+      <div class="create-login__group">
+        <label class="create-login__label" for="create-login-password-2">Password</label>
+        <input class="create-login__input" name="create-login-password" id="create-login-password-2" type="password"
+          placeholder="Repeat password">
+      </div>
+
+      <div class="create-login__checkbox">
+        <input class="create-login__checkbox-input" type="checkbox" id="checkbox-input">
+        <div class="create-login__checkbox-check"></div>
+        <label for="checkbox-input" class="create-login__checkbox-descr">
+          I consent to
+
+          <a class="create-login__checkbox-link" href="#">the terms of service</a>
+        </label>
+
+        <button class="create-login__btn">Create an account</button>
+      </div>
+
+      <p class="create-login__log">
+        Already have an account?
+        <a class="create-login__log-link" href="#"> Log in</a>
+      </p>
+    </div>
+  </form>
 </div>

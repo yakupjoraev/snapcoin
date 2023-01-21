@@ -316,8 +316,8 @@ function sendSelect() {
 sendSelect();
 
 function receiveSelect() {
-  const container = document.querySelector('.receive-select')
-  const containerList = document.querySelector('.receive-select ul')
+  const container = document.querySelector('.receive-select');
+  const containerList = document.querySelector('.receive-select ul');
 
   if (!container) {
     return null
@@ -328,4 +328,27 @@ function receiveSelect() {
   })
 }
 
-receiveSelect()
+receiveSelect();
+
+function chooseSelect() {
+  const container = document.querySelector('.calculator');
+
+  if (!container) {
+    return null
+  }
+
+  const chooseDouble = document.querySelector('.calculator__choose-double');
+  const chooseTriple = document.querySelector('.calculator__choose-triple');
+
+  chooseDouble.addEventListener('click', () => {
+    chooseDouble.classList.add('active')
+    chooseTriple.classList.remove('active')
+  })
+
+  chooseTriple.addEventListener('click', () => {
+    chooseTriple.classList.add('active')
+    chooseDouble.classList.remove('active')
+  })
+}
+
+chooseSelect()
