@@ -559,6 +559,8 @@ body ::-webkit-scrollbar-thumb {
 
 .help__element {
   display: none;
+  -webkit-animation: fade 1s;
+          animation: fade 1s;
 }
 
 .help__element.js-active-element {

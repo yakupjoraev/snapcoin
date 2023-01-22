@@ -133,6 +133,7 @@
 
   &__element {
     display: none;
+    animation: fade 1s;
 
     &.js-active-element {
       display: block;
