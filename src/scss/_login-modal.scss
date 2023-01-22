@@ -1,4 +1,5 @@
 .login-modal {
+  display: none;
   max-width: 600px;
   padding: 40px;
   position: relative;
@@ -191,6 +192,7 @@
 }
 
 .create-login {
+  display: none;
   max-width: 600px;
   padding: 40px;
   position: relative;

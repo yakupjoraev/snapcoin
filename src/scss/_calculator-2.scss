@@ -16,6 +16,10 @@
     padding: 20px;
   }
 
+  @media (max-width: $breakpoint768) {
+    display: none;
+  }
+
   // .calculator-double__inner
 
   &__inner {
@@ -48,6 +52,7 @@
     display: flex;
     justify-content: center;
     align-self: center;
+    margin-bottom: -20px;
 
     & svg {
       width: 30px;
@@ -70,13 +75,17 @@
   // .calculator-double__go
 
   &__go {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     max-width: 130px;
     width: 100%;
     align-self: flex-end;
+    margin-left: auto;
     margin-bottom: -31px;
 
     @media (max-width: $breakpoint992) {
-      max-width: 100px;
+      max-width: 72px;
       margin-bottom: -45px;
     }
   }
@@ -89,7 +98,8 @@
     align-items: center;
     height: 72px;
     min-width: 64px;
-    width: fit-content;
+    max-width: 130px;
+    width: 100%;
     padding: 6px 16px;
     margin-bottom: 20px;
     border-radius: 20px;
@@ -113,8 +123,8 @@
 
       & svg {
         display: block;
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
         margin: auto;
         transform: rotate(270deg);
 
@@ -158,6 +168,11 @@
     border-radius: 4px;
     background-color: transparent;
     border: 1px solid var(--color-text);
+
+    @media (max-width: $breakpoint992) {
+      width: 10px;
+      height: 10px;
+    }
   }
 
   // .calculator-double__go-descr
@@ -169,6 +184,11 @@
     font-size: 10px;
     line-height: 14px;
     color: var(--color-grey);
+
+    @media (max-width: $breakpoint992) {
+      padding-left: 12px;
+      font-size: 8px;
+    }
   }
 
   // .calculator-double__go-link
@@ -337,6 +357,7 @@
   // .send-double__amount
 
   &__amount {
+    position: relative;
     display: flex;
     align-items: center;
     padding-right: 16px;
@@ -366,8 +387,8 @@
 
   &__amout-list {
     position: absolute;
-    right: -10px;
-    top: -12px;
+    right: 0;
+    top: 0;
     width: 0;
     height: 0;
     opacity: 0;
@@ -555,6 +576,7 @@
   // .receive-double__amount
 
   &__amount {
+    position: relative;
     display: flex;
     align-items: center;
     padding-right: 16px;
@@ -583,8 +605,8 @@
 
   &__amout-list {
     position: absolute;
-    right: -10px;
-    top: -12px;
+    right: 0;
+    top: 0;
     width: 0;
     height: 0;
     opacity: 0;
@@ -675,4 +697,160 @@
   // .receive-double__info-max
 
   &__info-max {}
+}
+
+.send-double__content,
+.receive-double__content {
+  position: absolute;
+  left: 50px;
+  top: 210px;
+  padding: 35px 18px 18px 32px;
+  background-color: var(--color-background);
+  width: 0;
+  height: 0;
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  overflow-x: hidden;
+  border-radius: 16px;
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+  transition: all 0.2s linear;
+  z-index: 5;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.active {
+    width: calc(100% - 100px);
+    height: 400px;
+    opacity: 1;
+    user-select: auto;
+    pointer-events: auto;
+  }
+
+
+  & .calculator-triple__filters {
+    gap: 10px;
+    display: flex;
+    min-height: 35px;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+  }
+
+  & .calculator-triple__main {
+    display: grid;
+    row-gap: 10px;
+    height: 100%;
+    column-gap: 10px;
+    transition: opacity 0.3s;
+    grid-auto-flow: column;
+    justify-content: start;
+    grid-template-rows: repeat(3, 1fr);
+    scroll-snap-type: x proximity;
+    overflow-y: inherit;
+
+    & .calculator-triple__item:hover {
+      background-color: var(--color-secondary);
+    }
+
+
+    & .calculator-triple__banks {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 10px;
+
+    }
+
+    & .calculator-triple__cryptocurrency {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 10px;
+    }
+
+    & .calculator-triple__ps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 10px;
+    }
+
+  }
+}
+
+.receive-double__content {
+
+  & .calculator-triple__main {
+    display: grid;
+    row-gap: 10px;
+    height: 100%;
+    column-gap: 10px;
+    transition: opacity 0.3s;
+    grid-auto-flow: column;
+    justify-content: start;
+    grid-template-rows: repeat(3, 1fr);
+    scroll-snap-type: x proximity;
+    overflow-y: inherit;
+
+    & .calculator-triple__item-info .calculator-triple__item-descr {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+
+      & span:nth-child(2) {
+        font-size: 10px;
+      }
+    }
+
+    & .calculator-triple__item-price {
+      font-size: 12px;
+    }
+
+
+    & .calculator-triple__banks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 10px;
+      column-gap: 10px;
+    }
+
+    & .calculator-triple__cryptocurrency {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 10px;
+      column-gap: 10px;
+    }
+
+    & .calculator-triple__ps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 10px;
+      column-gap: 10px;
+    }
+  }
+}
+
+
+.calculator-double {
+  display: none;
+  animation: fade 1s;
+
+  &.active {
+    display: grid;
+
+    @media (max-width: $breakpoint768) {
+      display: none;
+    }
+  }
+}
+
+.calculator-triple {
+  display: none;
+  animation: fade 1s;
+
+  &.active {
+    display: grid;
+
+    @media (max-width: $breakpoint768) {
+      display: grid;
+    }
+  }
 }

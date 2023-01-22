@@ -130,6 +130,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 
+    @media (max-width: $breakpoint1450) {
+      margin-bottom: 30px;
+    }
 
     @media (max-width: $breakpoint768) {
       grid-template-columns: 1fr;

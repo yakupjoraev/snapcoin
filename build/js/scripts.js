@@ -270,6 +270,100 @@ function filterReceive() {
 
 filterReceive();
 
+function doubleFilterSend() {
+  const list = document.querySelector('.js-double-send-filters'),
+    items = document.querySelectorAll('.js-double-send-list'),
+    listItems = document.querySelectorAll('.js-double-send-filter')
+
+  function filter() {
+    list.addEventListener('click', event => {
+      const targetId = event.target.dataset.id
+      const target = event.target
+
+      if (target.classList.contains('js-double-send-filter')) {
+        listItems.forEach(listItem => listItem.classList.remove('active'))
+        target.classList.add('active')
+      }
+
+
+      switch (targetId) {
+        case 'double-send-all':
+          getItems('js-double-send-list')
+          break
+        case 'double-send-banks':
+          getItems(targetId)
+          break
+        case 'double-send-cryptocurrency':
+          getItems(targetId)
+          break
+        case 'double-send-ps':
+          getItems(targetId)
+          break
+      }
+    })
+  }
+  filter()
+
+  function getItems(className) {
+    items.forEach(item => {
+      if (item.classList.contains(className)) {
+        item.style.display = 'grid'
+      } else {
+        item.style.display = 'none'
+      }
+    })
+  }
+}
+
+doubleFilterSend();
+
+function doubleFilterReceive() {
+  const list = document.querySelector('.js-double-receive-filters'),
+    items = document.querySelectorAll('.js-double-receive-list'),
+    listItems = document.querySelectorAll('.js-double-receive-filter')
+
+  function filter() {
+    list.addEventListener('click', event => {
+      const targetId = event.target.dataset.id
+      const target = event.target
+
+      if (target.classList.contains('js-double-receive-filter')) {
+        listItems.forEach(listItem => listItem.classList.remove('active'))
+        target.classList.add('active')
+      }
+
+
+      switch (targetId) {
+        case 'double-receive-all':
+          getItems('js-double-receive-list')
+          break
+        case 'double-receive-banks':
+          getItems(targetId)
+          break
+        case 'double-receive-cryptocurrency':
+          getItems(targetId)
+          break
+        case 'double-receive-ps':
+          getItems(targetId)
+          break
+      }
+    })
+  }
+  filter()
+
+  function getItems(className) {
+    items.forEach(item => {
+      if (item.classList.contains(className)) {
+        item.style.display = 'grid'
+      } else {
+        item.style.display = 'none'
+      }
+    })
+  }
+}
+
+doubleFilterReceive();
+
 function sendSlection() {
   const container = document.querySelector('.send-selection')
   const containerList = document.querySelector('.send-selection ul')
@@ -330,6 +424,36 @@ function receiveSelect() {
 
 receiveSelect();
 
+function amountSendSelect() {
+  const container = document.querySelector('.send-double__amount');
+  const containerList = document.querySelector('.send-double__amount ul');
+
+  if (!container) {
+    return null
+  }
+
+  container.addEventListener('click', () => {
+    containerList.classList.toggle('active')
+  })
+}
+
+amountSendSelect();
+
+function amountReceiveSelect() {
+  const container = document.querySelector('.receive-double__amount');
+  const containerList = document.querySelector('.receive-double__amount ul');
+
+  if (!container) {
+    return null
+  }
+
+  container.addEventListener('click', () => {
+    containerList.classList.toggle('active')
+  })
+}
+
+amountReceiveSelect();
+
 function chooseSelect() {
   const container = document.querySelector('.calculator');
 
@@ -339,16 +463,47 @@ function chooseSelect() {
 
   const chooseDouble = document.querySelector('.calculator__choose-double');
   const chooseTriple = document.querySelector('.calculator__choose-triple');
+  const doubleVersion = document.querySelector('.calculator-double');
+  const tripleVersion = document.querySelector('.calculator-triple');
 
   chooseDouble.addEventListener('click', () => {
     chooseDouble.classList.add('active')
     chooseTriple.classList.remove('active')
+    doubleVersion.classList.add('active')
+    tripleVersion.classList.remove('active')
   })
 
   chooseTriple.addEventListener('click', () => {
     chooseTriple.classList.add('active')
     chooseDouble.classList.remove('active')
+    tripleVersion.classList.add('active')
+    doubleVersion.classList.remove('active')
   })
 }
 
-chooseSelect()
+chooseSelect();
+
+function vievSends() {
+  const container = document.querySelector('.calculator');
+
+  if (!container) {
+    return null
+  }
+
+  const doubleSend = document.querySelector('.send-double__select');
+  const contentSend = document.querySelector('.send-double__content');
+  const doubleReceive = document.querySelector('.receive-double__select');
+  const contentReceive = document.querySelector('.receive-double__content');
+
+  doubleSend.addEventListener('click', () => {
+    contentSend.classList.toggle('active')
+    contentReceive.classList.remove('active')
+  })
+
+  doubleReceive.addEventListener('click', () => {
+    contentSend.classList.remove('active')
+    contentReceive.classList.toggle('active')
+  })
+}
+
+vievSends();
